@@ -61,6 +61,10 @@ format = '[$symbol]($style)'
 
 [os.symbols]
 NixOS = "󱄅 "
+Windows = "󰍲 "
+Ubuntu = "󰕈 "
+Debian = " "
+Linux = " "
 
 [directory]
 style = "fg:primary"
