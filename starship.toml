@@ -11,12 +11,6 @@ $git_commit\
 $git_status\
 $git_metrics\
 $git_state\
-$c\
-$rust\
-$golang\
-$nodejs\
-$haskell\
-$python\
 $package\
 $cmd_duration\
 $line_break\
@@ -147,9 +141,3 @@ format = '[( $symbol( $version) )]($style)'
 disabled = false
 style = "fg:accent"
 symbol = " "
-
-[rust]
-symbol = " "
-style = "fg:accent"
-format = '[( $symbol( $version) )]($style)'
-version_format = '${raw}'
