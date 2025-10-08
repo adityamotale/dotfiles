@@ -40,7 +40,7 @@ language-servers = ["clangd"]
 command = "clangd"
 
 #
-# ASM
+# asm (asm)
 #
 
 [[language]]
@@ -52,6 +52,22 @@ language-servers = ["asm-lsp"]
 
 [language-server.asm-lsp]
 command = "asm-lsp"
+
+#
+# asm (s)
+#
+
+[[grammar]]
+name = "arm-asm"
+source = { git = "https://github.com/RubixDev/tree-sitter-asm.git", rev = "04962e15f6b464cf1d75eada59506dc25090e186" }
+
+[[language]]
+name = "arm64-asm"
+scope = "source.s"
+file-types = [ "s" ]
+comment-token = "//"
+grammar = "arm-asm"
+
 
 #
 # python
