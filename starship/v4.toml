@@ -1,0 +1,126 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+palette = 'catppuccin_latte'
+add_newline = false
+
+format = """
+$os\
+$directory\
+$git_branch\
+$git_commit\
+$git_status\
+$git_metrics\
+$git_state\
+$cmd_duration\
+$line_break\
+$character\
+"""
+
+[palettes.catppuccin_latte]
+primary   = '#4C4F69'
+secondary = '#ACB0BE'
+background = '#EFF1F5'
+accent    = '#1E66F5'
+error     = '#D20F39'
+success   = '#40A02B'
+warning   = '#DF8E1D'
+info      = '#179299'
+muted     = '#5C5F77'
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = ''
+error_symbol = '[✗](fg:error)'
+
+[cmd_duration]
+min_time = 2000
+format = '[⏱️ $duration ]($style)'
+style = 'fg:info'
+show_milliseconds = false
+disabled = false
+
+[os]
+disabled = false
+style = "fg:success"
+format = '[$symbol]($style)'
+
+[os.symbols]
+NixOS = "✺ "
+
+[directory]
+style = "fg:primary"
+read_only_style = "fg:warning"
+repo_root_style = "fg:accent"
+format = "[ $path ]($style)"
+read_only = "🔒"
+home_symbol = "~"
+truncation_symbol = " "
+truncation_length = 3
+truncate_to_repo = true
+fish_style_pwd_dir_length = 0
+use_logical_path = true
+
+[git_branch]
+symbol = "⸙"
+style = "fg:success"
+format = '[ ($symbol $branch)  ]($style)'
+only_attached = true
+ignore_branches = []
+truncation_length = 0x20
+truncation_symbol = "..."
+always_show_remote = false
+disabled = false
+
+[git_commit]
+style = "fg:secondary"
+format = "[(( $tag)( @$hash) )]($style)"
+commit_hash_length = 7
+only_detached = true
+tag_symbol = "🏷️"
+tag_disabled = false
+disabled = false
+
+[git_status]
+style = "fg:info"
+format = '[($ahead_behind )($all_status )]($style)'
+stashed = "*${count}"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+up_to_date = ""
+diverged = "⇡${ahead_count}⇣${behind_count}"
+conflicted = "=${count}"
+deleted = "×${count}"
+renamed = "»${count}"
+modified = "!${count}"
+staged = "+${count}"
+untracked = "?${count}"
+ignore_submodules = false
+disabled = false
+
+[git_metrics]
+format = '[(([+$added]($added_style))([-$deleted]($deleted_style)) )](fg:info)'
+added_style = "fg:success"
+deleted_style = "fg:error"
+only_nonzero_diffs = true
+disabled = false
+
+[git_state]
+style = "fg:error"
+format = '[($state( $progress_current/$progress_total) )]($style bold)'
+rebase = "REBASING"
+merge = "MERGING"
+revert = "REVERTING"
+cherry_pick = "CHERRY-PICKING"
+bisect = "BISECTING"
+am = "AM"
+am_or_rebase = "AM/REBASE"
+disabled = false
+
+[package]
+disabled = true
+
+[sudo]
+disabled = true
