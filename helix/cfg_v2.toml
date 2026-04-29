@@ -1,0 +1,64 @@
+theme = "catppuccin_latte"
+
+[editor]
+true-color = true
+line-number = "relative"
+mouse = false
+bufferline = "multiple"
+auto-pairs = true
+gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
+end-of-line-diagnostics = "hint"
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+
+[editor.lsp]
+enable = true
+display-messages = true
+display-progress-messages = true
+auto-signature-help = true
+display-inlay-hints = true
+display-signature-help-docs = true
+snippets = true
+goto-reference-include-declaration = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+ignore = true
+
+[editor.auto-save]
+focus-lost = true
+after-delay.enable = true
+
+[editor.whitespace.render]
+space = "none"
+tab = "none"
+nbsp = "none"
+nnbsp = "none"
+newline = "none"
+
+[editor.indent-guides]
+render = true
+character = "╎"
+skip-levels = 1
+
+[keys.normal."space"]
+"o" = "file_picker_in_current_buffer_directory"
+
+[keys.normal]
+
+# Buffer (w/ Ctrl)
+
+"C-s" = ":write"
+"C-d" = [":write",":buffer-close"]
+"C-y" = ":clipboard-yank"
+
+# Delete commands
+
+"d" = "delete_selection"
+"D" = ["extend_to_line_bounds", "delete_selection"]
