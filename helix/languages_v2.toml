@@ -1,0 +1,92 @@
+#
+# Nix
+#
+
+[[language]]
+name = "nix"
+language-servers = ["nixd"]
+
+[language-server.nixd]
+command = "nixd"
+
+#
+# C
+#
+
+[[language]]
+name = "c"
+scope = "source.c"
+file-types = ["c", "h"]
+auto-format = true
+formatter = { command = "clang-format" }
+roots = ["Makefile"]
+language-servers = ["clangd"]
+
+[language-server.clangd]
+command = "clangd"
+
+#
+# asm (x86)
+#
+
+[[language]]
+name = "assembly"
+scope = "source.asm"
+file-types = ["asm"]
+auto-format = false
+language-servers = ["asm-lsp"]
+
+[language-server.asm-lsp]
+command = "asm-lsp"
+
+#
+# Rust
+#
+
+[[language]]
+name = "rust"
+auto-format = true
+formatter = { command = "rustfmt" }
+roots = [
+  "Cargo.toml",
+  "Cargo.lock",
+  ".git",
+]
+language-servers = ["rust-analyzer"]
+
+[language-server.rust-analyzer]
+command = "rust-analyzer"
+
+[language-server.rust-analyzer.config]
+inlayHints.bindingModeHints.enable = false
+inlayHints.closingBraceHints.minLines = 10
+inlayHints.closureReturnTypeHints.enable = "with_block"
+inlayHints.discriminantHints.enable = "fieldless"
+inlayHints.lifetimeElisionHints.enable = "skip_trivial"
+inlayHints.typeHints.hideClosureInitialization = false
+
+#
+# TOML
+#
+
+[[language]]
+name = "toml"
+auto-format = true
+language-servers = ["taplo"]
+
+[language-server.taplo]
+command = "taplo"
+args = ["lsp"]
+
+#
+# YAML
+#
+
+[[language]]
+name = "yaml"
+auto-format = true
+language-servers = ["yaml-language-server"]
+
+[language-server.yaml-language-server]
+command = "yaml-language-server"
+args = ["--stdio"]
