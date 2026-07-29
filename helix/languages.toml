@@ -92,13 +92,12 @@ command = "taplo"
 args = ["lsp"]
 
 #
-# Cuda
+# C++ (Cuda)
 #
 
 [[language]]
-name = "cuda"
-scope = "source.cu"
-file-types = ["cu", "cuh"]
+name = "cpp"
+file-types = ["cpp", "cc", "cxx", "hpp", "hh", "hxx", "cu", "cuh"]
 auto-format = true
 formatter = { command = "clang-format" }
 language-servers = ["clangd"]
@@ -106,7 +105,7 @@ roots = [
   "compile_commands.json",
   "compile_flags.txt",
   "CMakeLists.txt",
-  "Makefile"
+  "Makefile",
 ]
 
 #
