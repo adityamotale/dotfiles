@@ -228,3 +228,14 @@ language-servers = [
 [language-server.svelteserver]
 command = "svelteserver"
 args = ["--stdio"]
+
+# 
+# Markdown
+#
+
+[language-server.markdown-oxide]
+command = "markdown-oxide"
+
+[[language]]
+name = "markdown"
+language-servers = ["markdown-oxide"]
