@@ -58,7 +58,7 @@ skip-levels = 1
 "D" = ["extend_line", "delete_selection_noyank"]
 "A-d" = ["extend_to_line_bounds", "delete_selection"]
 
-"A-y" = ["extend_line", ":clipboard-yank", "collapse_selection"]
+"A-y" = [":clipboard-yank", "collapse_selection"]
 "C-y" = ["select_all", ":clipboard-yank", "collapse_selection"]
 
 "C-s" = ":write"
