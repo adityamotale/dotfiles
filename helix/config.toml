@@ -1,6 +1,7 @@
 theme = "catppuccin_latte"
 # theme = "rose_pine_dawn"
 # theme = "kanagawa-lotus"
+# theme = "bogster_light"
 
 [editor]
 true-color = true
