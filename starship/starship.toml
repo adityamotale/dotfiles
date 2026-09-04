@@ -73,7 +73,7 @@ format = '[$symbol]($style)'
 [os.symbols]
 Arch = "✱ "
 NixOS = "✦ "
-Debian = "❃ "
+Debian = "◆ "
 Alpine = "✽ "
 
 [directory]
