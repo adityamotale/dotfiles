@@ -276,11 +276,34 @@
       "selectionBackground": "#312F44",
       "white"              : "#E0DEF4",
       "yellow"             : "#F6C177"
+    },
+    {
+      "name": "bogster_light",
+      "background": "#F6FBD6",
+      "foreground": "#161C23",
+      "black": "#232D38",
+      "red": "#D32C5D",
+      "green": "#7FDC59",
+      "yellow": "#A58023",
+      "blue": "#59C0DC",
+      "purple": "#D32C5D",
+      "cyan": "#23A580",
+      "white": "#627D9D",
+      "brightBlack": "#415367",
+      "brightRed": "#DC597F",
+      "brightGreen": "#7FDC59",
+      "brightYellow": "#A58023",
+      "brightBlue": "#289CBC",
+      "brightPurple": "#D32C5D",
+      "brightCyan": "#23A580",
+      "brightWhite": "#161C23",
+      "cursorColor": "#ABB2BF",
+      "selectionBackground": "#C7C7BA"
     }
   ],
   "showTabsInTitlebar": true,
   "showTerminalTitleInTitlebar": false,
-  "theme": "rose-pine-dawn",
+  "theme": "Catppuccin Latte",
   "themes": [
     {
       "name"  : "Catppuccin Frappe",
@@ -401,7 +424,27 @@
         "unfocusedFrame"           : null,
         "useMica"                  : false
       }
+    },
+    {
+    "name": "bogster_light",
+    "tab": {
+      "background": "#F6FBD6FF",
+      "iconStyle": "default",
+      "showCloseButton": "always",
+      "unfocusedBackground": null
+    },
+    "tabRow": {
+      "background": "#C7C7BAFF",
+      "unfocusedBackground": "#D7DBBBFF"
+    },
+    "window": {
+      "applicationTheme": "light",
+      "experimental.rainbowFrame": false,
+      "frame": null,
+      "unfocusedFrame": null,
+      "useMica": false
     }
+  }
   ],
   "useAcrylicInTabRow": false
 }
