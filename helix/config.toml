@@ -11,6 +11,7 @@ bufferline = "multiple"
 auto-pairs = true
 gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
 end-of-line-diagnostics = "hint"
+rulers = [100, 120]
 
 [editor.inline-diagnostics]
 cursor-line = "warning"
