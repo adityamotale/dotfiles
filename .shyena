@@ -1,0 +1,309 @@
+# ~/.config/.shyena
+# Documentation: https://github.com/adityamotale/shyena
+#
+# This file is PowerShell. Comments are ignored; only declarations are read.
+# Reload after editing with :reload, or sign out and back in.
+#
+# PREFIXES
+#   @   registered application      @terminal
+#   #   PowerShell command          #volume 40
+#   :   built-in command            :reload
+#       no prefix                   search apps and commands together
+#
+# Arguments are forwarded as typed; quotes are not parsed. Commands change
+# state (clipboard, processes, settings) rather than print output.
+
+
+# =============================================================================
+# 1  BEHAVIOR
+# =============================================================================
+
+# Palette: 'macchiato' (Catppuccin Macchiato, default), 'latte' (Catppuccin Latte),
+#          'everforest-light' (Everforest Light), 'everforest-dark' (Everforest Dark);
+Set-Theme 'everforest-dark'
+
+# Candidate list: 'on' = search as you type, 'off' = exact key + Enter only.
+Set-Suggestions 'on'
+
+
+# =============================================================================
+# 2  APPLICATIONS                                                            @
+# =============================================================================
+# Register-App '<key>' @{
+#     Path = '<executable>'          # absolute path, or a name found on PATH
+#     Args = @('<static>', 'args')   # applied on every launch
+# }
+# Anything typed after the key is appended, so  @ files C:\dev  works.
+
+Register-App 'chat1' @{
+    Path = 'C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe'
+    Args = @('--profile-directory=Profile 2', 'https://chatgpt.com')
+}
+
+Register-App 'chat2' @{
+    Path = 'C:\Users\froze\AppData\Local\imput\Helium\Application\chrome.exe'
+    Args = @('https://chatgpt.com')
+}
+
+Register-App 'chat3' @{
+    Path = 'C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe'
+    Args = @('--profile-directory=Profile 2', 'https://gemini.google.com/app')
+}
+
+Register-App 'chat4' @{
+    Path = 'C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe'
+    Args = @('--profile-directory=Profile 9', 'https://gemini.google.com/app')
+}
+
+Register-App 'br-p' @{
+    Path = 'C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe'
+    Args = @('--profile-directory=Default')
+}
+
+Register-App 'br-a' @{
+    Path = 'C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe'
+    Args = @('--profile-directory=Profile 9')
+}
+
+Register-App 'br-e' @{
+    Path = 'C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe'
+    Args = @('--profile-directory=Profile 3')
+}
+
+Register-App 'br-u' @{
+    Path = 'C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe'
+    Args = @('--profile-directory=Profile 6')
+}
+
+Register-App 'br' @{
+    Path = 'C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe'
+    Args = @('--profile-directory=Profile 2')
+}
+
+Register-App 'brave' @{
+    Path = 'C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe'
+    Args = @()
+}
+
+Register-App 'hlm' @{
+    Path = 'C:\Users\froze\AppData\Local\imput\Helium\Application\chrome.exe'
+    Args = @()
+}
+
+Register-App 'term' @{
+    Path = "wt.exe"
+    Args = @('-p', 'ps1', '-d', '~')
+}
+
+Register-App 'notepad' @{
+    Path = "notepad.exe"
+    Args = @()
+}
+
+Register-App 'ps1' @{
+    Path = "wt.exe"
+    Args = @('-p', 'ps1')
+}
+
+Register-App 'arch' @{
+    Path = "wt.exe"
+    Args = @('-p', 'archlinux')
+}
+
+Register-App 'debian' @{
+    Path = "wt.exe"
+    Args = @('-p', 'Debian')
+}
+
+Register-App 'nix' @{
+    Path = "wt.exe"
+    Args = @('-p', 'NixOS')
+}
+
+Register-App 'alpine' @{
+    Path = "wt.exe"
+    Args = @('-p', 'Alpine')
+}
+
+Register-App 'agy' @{
+    Path = "C:\Users\froze\AppData\Local\Programs\Antigravity\Antigravity.exe"
+    Args = @()
+}
+
+Register-App 'opencode' @{
+    Path = "C:\Users\froze\AppData\Local\Programs\ai.opencode.desktop\OpenCode.exe"
+    Args = @()
+}
+
+Register-App 'amazon' @{
+    Path = 'C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe'
+    Args = @('--profile-directory=Default', 'https://amazon.in')
+}
+
+Register-App 'x' @{
+    Path = 'C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe'
+    Args = @('--profile-directory=Default', 'https://x.com/home')
+}
+
+Register-App 'yt' @{
+    Path = 'C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe'
+    Args = @('--profile-directory=Profile 3', 'https://www.youtube.com/')
+}
+
+Register-App 'music' @{
+    Path = 'C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe'
+    Args = @('--profile-directory=Profile 3', 'https://music.youtube.com/')
+}
+
+Register-App 'whatsapp' @{
+    Path = 'C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe'
+    Args = @('--profile-directory=Profile 3', 'https://web.whatsapp.com/')
+}
+
+# Task Manager - faster than Ctrl+Shift+Esc when your hands are on the keys.
+Register-App 'tmgr' @{
+    Path = 'C:\Windows\System32\Taskmgr.exe'
+    Args = @()
+}
+
+# =============================================================================
+# 3  SESSION                                                                #
+# =============================================================================
+
+# lock - lock the workstation immediately (Win+L equivalent).
+function lock {
+    shutdown /l
+}
+
+# standby - sleep, keeping apps and unsaved work intact.
+function sleep {
+    Add-Type -AssemblyName System.Windows.Forms
+    $PowerState = [System.Windows.Forms.PowerState]::Suspend
+    $Force = $false
+    $DisableWake = $false
+    [System.Windows.Forms.Application]::SetSuspendState($PowerState, $Force, $DisableWake)
+}
+
+# Power-off / restart / sign-out are deliberately NOT enabled by default: a
+# single stray Enter must never destroy a session. To opt in, add a prompt:
+function shutdown {
+    Stop-Computer
+}
+
+# Restart and sign-out follow the same guarded pattern if you want them:
+function restart {
+    Restart-Computer
+}
+
+
+# =============================================================================
+# 4  MEDIA                                                                  #
+# =============================================================================
+# Up/down/mute use virtual-key events; no extra software required. Each
+# function runs in its own PowerShell process, so each repeats its Add-Type.
+# The Core Audio COM declarations in 'volume' must keep their vtable order.
+
+# volume <0-100> - set the master volume.                  e.g. # volume 40
+function volume {
+    param(
+        [Parameter(Mandatory = $true)]
+        [ValidateRange(0, 100)]
+        [int]$Level
+    )
+
+    Add-Type -TypeDefinition @'
+using System;
+using System.Runtime.InteropServices;
+
+[ComImport, Guid("BCDE0395-E52F-467C-8E3D-C4579291692E")]
+public class MMDeviceEnumerator { }
+
+[ComImport, Guid("A95664D2-9614-4F35-A746-DE8DB63617E6"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+public interface IMMDeviceEnumerator
+{
+    [PreserveSig] int EnumAudioEndpoints(int dataFlow, int stateMask, out IMMDeviceCollection devices);
+    [PreserveSig] int GetDefaultAudioEndpoint(int dataFlow, int role, out IMMDevice device);
+    [PreserveSig] int GetDevice(string id, out IMMDevice device);
+    [PreserveSig] int RegisterEndpointNotificationCallback(IntPtr client);
+    [PreserveSig] int UnregisterEndpointNotificationCallback(IntPtr client);
+}
+
+[ComImport, Guid("0BD7A1BE-7A1A-44DB-8397-CC5392387B5E"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+public interface IMMDeviceCollection
+{
+    [PreserveSig] int GetCount(out int count);
+    [PreserveSig] int Item(int index, out IMMDevice device);
+}
+
+[ComImport, Guid("D666063F-1587-4E43-81F1-B948E807363F"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+public interface IMMDevice
+{
+    [PreserveSig] int Activate(ref Guid iid, int clsCtx, IntPtr activationParams, out IAudioEndpointVolume endpoint);
+    [PreserveSig] int GetId(out IntPtr id);
+    [PreserveSig] int GetState(out int state);
+}
+
+[ComImport, Guid("5CDF2C82-841E-4546-9722-0CF74078229A"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+public interface IAudioEndpointVolume
+{
+    [PreserveSig] int RegisterControlChangeNotify(IntPtr notify);
+    [PreserveSig] int UnregisterControlChangeNotify(IntPtr notify);
+    [PreserveSig] int GetChannelCount(out int count);
+    [PreserveSig] int SetMasterVolumeLevel(float levelDb, ref Guid context);
+    [PreserveSig] int SetMasterVolumeLevelScalar(float level, ref Guid context);
+    [PreserveSig] int GetMasterVolumeLevel(out float levelDb);
+    [PreserveSig] int GetMasterVolumeLevelScalar(out float level);
+    [PreserveSig] int SetChannelVolumeLevel(int channel, float levelDb, ref Guid context);
+    [PreserveSig] int SetChannelVolumeLevelScalar(int channel, float level, ref Guid context);
+    [PreserveSig] int GetChannelVolumeLevel(int channel, out float levelDb);
+    [PreserveSig] int GetChannelVolumeLevelScalar(int channel, out float level);
+    [PreserveSig] int SetMute(bool mute, ref Guid context);
+    [PreserveSig] int GetMute(out bool mute);
+    [PreserveSig] int GetVolumeStepInfo(out int step, out int stepCount);
+    [PreserveSig] int VolumeStepUp(ref Guid context);
+    [PreserveSig] int VolumeStepDown(ref Guid context);
+    [PreserveSig] int QueryHardwareSupport(out int mask);
+    [PreserveSig] int GetVolumeRange(out float minDb, out float maxDb, out float incrementDb);
+}
+
+public static class ShyenaAudio
+{
+    public static void SetVolume(int level)
+    {
+        IMMDeviceEnumerator enumerator = (IMMDeviceEnumerator)new MMDeviceEnumerator();
+        IMMDevice device;
+        enumerator.GetDefaultAudioEndpoint(0, 0, out device);
+        Guid iid = typeof(IAudioEndpointVolume).GUID;
+        IAudioEndpointVolume endpoint;
+        device.Activate(ref iid, 1, IntPtr.Zero, out endpoint);
+        Guid context = Guid.Empty;
+        endpoint.SetMasterVolumeLevelScalar(level / 100f, ref context);
+    }
+}
+'@
+    [ShyenaAudio]::SetVolume($Level)
+}
+
+
+# =============================================================================
+# 5  MISC                                                                     #
+# =============================================================================
+
+# light <0-100> - set the disply brightness.                  e.g. # light 24
+function light {
+    param(
+        [Parameter(Mandatory = $true)]
+        [ValidateRange(0, 100)]
+        [int]$Level
+    )
+
+    $wmi = Get-WmiObject -Namespace root/WMI -Class WmiMonitorBrightnessMethods
+    $wmi.WmiSetBrightness(1, $Level)
+}
+
+
+# calc <expression...> - evaluate arithmetic expression and output result.
+function calc {
+    if ($args.Count -eq 0) { throw 'calc: provide an expression' }
+    Invoke-Expression ($args -join ' ')
+}
